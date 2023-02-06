@@ -9,7 +9,7 @@ public class Main {
         TaskService.newTask("Eat", Task.Type.PERSONAL, 2023, Month.FEBRUARY, 25, 18, 20, Task.PeriodicityOfTasks.MonthlyTask);
         TaskService.newTask("Sleep", Task.Type.PERSONAL, 2023, Month.FEBRUARY, 23, 20, 20, Task.PeriodicityOfTasks.DailyTask);
         TaskService.newTask("Rave", Task.Type.PERSONAL, 2023, Month.JANUARY, 23, 18, 20, Task.PeriodicityOfTasks.YearlyTask);
-        TaskService.newTask("Kursovaya", Task.Type.PERSONAL, 2023, Month.FEBRUARY, 06, 18, 20, Task.PeriodicityOfTasks.YearlyTask);
+        TaskService.newTask("Kursovaya rabota", Task.Type.PERSONAL, 2023, Month.FEBRUARY, 06, 18, 20, Task.PeriodicityOfTasks.YearlyTask);
 
         TaskService.manageTasks();
 
