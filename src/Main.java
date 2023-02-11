@@ -13,7 +13,7 @@ public class Main {
         TaskService.newTask("Eat", TaskEnums.Type.PERSONAL, 2023, Month.FEBRUARY, 18, 20, 20, TaskEnums.PeriodicityOfTasks.WeeklyTask);
         TaskService.newTask("Sleep", TaskEnums.Type.PERSONAL, 2023, Month.FEBRUARY, 22, 20, 20, TaskEnums.PeriodicityOfTasks.DailyTask);
         TaskService.newTask("Rave", TaskEnums.Type.PERSONAL, 2021, Month.FEBRUARY, 25, 20, 20, TaskEnums.PeriodicityOfTasks.YearlyTask);
-        TaskService.newTask("Kursovaya rabota", TaskEnums.Type.PERSONAL, 2021, Month.FEBRUARY, 06, 18, 20, TaskEnums.PeriodicityOfTasks.DailyTask);
+        TaskService.newTask("Kursovaya rabota", TaskEnums.Type.PERSONAL, 2020, Month.FEBRUARY, 06, 18, 20, TaskEnums.PeriodicityOfTasks.DailyTask);
 
         TaskService.manageTasks();
 
