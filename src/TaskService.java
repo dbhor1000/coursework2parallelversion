@@ -126,7 +126,7 @@ public class TaskService {
 
 
         if ((listOfId.contains(idToCheck)) == false) {
-            throw new TaskNotFoundException("Задание с введённым id не найдено.");
+            throw new TaskNotFoundException("Задание с введённым id не найдено. :(");
         }
     }
 
