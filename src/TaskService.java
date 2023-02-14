@@ -16,11 +16,29 @@ public class TaskService {
                 '}';
     }
 
+    //Методы, относящиеся к файлам Enum
+
+    public static PeriodicityOfTasks getPeriodicity(String str){
+        if (str.equals(PeriodicityOfTasks.OneTimeTask.name())) return PeriodicityOfTasks.OneTimeTask;
+        if (str.equals(PeriodicityOfTasks.DailyTask.name())) return PeriodicityOfTasks.DailyTask;
+        if (str.equals(PeriodicityOfTasks.WeeklyTask.name())) return PeriodicityOfTasks.WeeklyTask;
+        if (str.equals(PeriodicityOfTasks.MonthlyTask.name())) return PeriodicityOfTasks.MonthlyTask;
+        if (str.equals(PeriodicityOfTasks.YearlyTask.name())) return PeriodicityOfTasks.YearlyTask;
+        throw new RuntimeException("Unexpected Operator");
+    }
+
+    public static Type getType(String str){
+        if (str.equals(Type.WORK.name())) return Type.WORK;
+        if (str.equals(Type.PERSONAL.name())) return Type.PERSONAL;
+        throw new RuntimeException("Unexpected Operator");
+    }
+
+
 
     //Сортировка методов.
     //Методы, относящиеся к добавлению заданий.
 
-    public static void newTask(String title, TaskEnums.Type type, int year, Month month, int dayOfMonth, int hour, int minute, TaskEnums.PeriodicityOfTasks periodicity) {
+    public static void newTask(String title, Type type, int year, Month month, int dayOfMonth, int hour, int minute, PeriodicityOfTasks periodicity) {
 
 
         arrayOfTasks.add(arrayOfTasks.size(), new Task(title, type, LocalDateTime.of(year, month, dayOfMonth, hour, minute), periodicity));
@@ -30,8 +48,8 @@ public class TaskService {
     //Метод для проверки введённых данных.
 
     public static void checkInput(String typeInput, String dateInput, String recurrenceInput) throws ImproperInput {
-        if (!(Arrays.stream(TaskEnums.Type.values())
-                .map(TaskEnums.Type::name)
+        if (!(Arrays.stream(Type.values())
+                .map(Type::name)
                 .collect(Collectors.toSet())
                 .contains(typeInput))) {
             throw new ImproperInput("Данные были введены ошибочно.");
@@ -42,8 +60,8 @@ public class TaskService {
 
         }
 
-        if (!(Arrays.stream(TaskEnums.PeriodicityOfTasks.values())
-                .map(TaskEnums.PeriodicityOfTasks::name)
+        if (!(Arrays.stream(PeriodicityOfTasks.values())
+                .map(PeriodicityOfTasks::name)
                 .collect(Collectors.toSet())
                 .contains(recurrenceInput)))
 
@@ -80,8 +98,8 @@ public class TaskService {
         try {
 
             checkInput(taskType, taskDate, taskRecurrecne);
-            newTask(taskName, TaskEnums.getType(taskType), Integer.parseInt(taskDate.substring(6, 10)), Month.of(Integer.parseInt(taskDate.substring(3, 5))), Integer.parseInt(taskDate.substring(0, 2)),
-                    Integer.parseInt(taskDate.substring(11, 13)), Integer.parseInt(taskDate.substring(14, 16)), TaskEnums.getPeriodicity(taskRecurrecne));
+            newTask(taskName, getType(taskType), Integer.parseInt(taskDate.substring(6, 10)), Month.of(Integer.parseInt(taskDate.substring(3, 5))), Integer.parseInt(taskDate.substring(0, 2)),
+                    Integer.parseInt(taskDate.substring(11, 13)), Integer.parseInt(taskDate.substring(14, 16)), getPeriodicity(taskRecurrecne));
 
             System.out.println("Введите описание задачи или введите 0, чтобы оставить поле пустым.");
 
@@ -126,7 +144,7 @@ public class TaskService {
 
 
         if ((listOfId.contains(idToCheck)) == false) {
-            throw new TaskNotFoundException("Задание с введённым id не найдено. :(");
+            throw new TaskNotFoundException("Задание с введённым id не найдено.");
         }
     }
 

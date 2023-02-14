@@ -10,10 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
 
-        TaskService.newTask("Eat", TaskEnums.Type.PERSONAL, 2023, Month.FEBRUARY, 18, 20, 20, TaskEnums.PeriodicityOfTasks.WeeklyTask);
-        TaskService.newTask("Sleep", TaskEnums.Type.PERSONAL, 2023, Month.FEBRUARY, 22, 20, 20, TaskEnums.PeriodicityOfTasks.DailyTask);
-        TaskService.newTask("Rave", TaskEnums.Type.PERSONAL, 2021, Month.FEBRUARY, 25, 20, 20, TaskEnums.PeriodicityOfTasks.YearlyTask);
-        TaskService.newTask("Kursovaya rabota", TaskEnums.Type.PERSONAL, 2020, Month.FEBRUARY, 06, 18, 20, TaskEnums.PeriodicityOfTasks.DailyTask);
+        TaskService.newTask("Eat", Type.PERSONAL, 2023, Month.FEBRUARY, 18, 20, 20, PeriodicityOfTasks.WeeklyTask);
+        TaskService.newTask("Sleep", Type.PERSONAL, 2023, Month.FEBRUARY, 22, 20, 20, PeriodicityOfTasks.DailyTask);
+        TaskService.newTask("Rave", Type.PERSONAL, 2021, Month.FEBRUARY, 25, 20, 20, PeriodicityOfTasks.YearlyTask);
+        TaskService.newTask("Kursovaya rabota", Type.PERSONAL, 2021, Month.FEBRUARY, 06, 18, 20, PeriodicityOfTasks.DailyTask);
 
         TaskService.manageTasks();
 

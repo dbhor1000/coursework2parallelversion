@@ -4,13 +4,13 @@ import java.util.Objects;
 public class Task {
 
     private String title;
-    private TaskEnums.Type type;
+    private Type type;
     private int id;
     private LocalDateTime dateTime;
     private String description;
-    private TaskEnums.PeriodicityOfTasks periodicity;
+    private PeriodicityOfTasks periodicity;
     private static int idGenerator = 0;
-    public TaskEnums.Type getType() {
+    public Type getType() {
         return type;
     }
     public int getId() {
@@ -32,11 +32,11 @@ public class Task {
         return description;
     }
 
-    public TaskEnums.PeriodicityOfTasks getPeriodicity() {
+    public PeriodicityOfTasks getPeriodicity() {
         return periodicity;
     }
 
-    public Task(String title, TaskEnums.Type type, LocalDateTime dateTime, TaskEnums.PeriodicityOfTasks periodicity) {
+    public Task(String title, Type type, LocalDateTime dateTime, PeriodicityOfTasks periodicity) {
         this.title = title;
         this.type = type;
         this.dateTime = dateTime;
